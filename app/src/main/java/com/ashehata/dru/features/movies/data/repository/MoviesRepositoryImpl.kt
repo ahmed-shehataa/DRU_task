@@ -17,7 +17,7 @@ class MoviesRepositoryImpl @Inject constructor(
 
 
     override suspend fun getMovies(): List<MovieDomainModel> = withContext(Dispatchers.IO) {
-        return@withContext local.getMovies().map { it.toDomainModel() }
+        return@withContext remote.getMovies().map { it.toDomainModel() }
     }
 
 

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Dru</string>
+    <string name="no_internet">No Internet</string>
+    <string name="unknown">Unknown Error</string>
+    <string name="not_found">Not Found</string>
+    <string name="server_error">"Server Not available now "</string>
+    <string name="try_gain">Try again</string>
+    <string name="movies_title">Movies</string>
+    <string name="name">Name</string>
+    <string name="vote_average">Vote</string>
 </resources>
