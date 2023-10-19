@@ -1,20 +1,13 @@
 package com.ashehata.dru.database.room
 
-import androidx.room.Dao
 import androidx.room.Database
-import androidx.room.Entity
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.ashehata.dru.features.movies.data.local.dao.MoviesDao
+import com.ashehata.dru.features.movies.data.model.MovieDataModel
 
-@Database(entities = [DrugDataModel::class], version = 1)
+@Database(entities = [MovieDataModel::class], version = 1)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun diabetesDao(): DiabetesDao
+    abstract fun moviesDao(): MoviesDao
 }
-
-
-@Entity
-data class DrugDataModel(
-    var asds: Int
-)
-
-@Dao
-interface DiabetesDao

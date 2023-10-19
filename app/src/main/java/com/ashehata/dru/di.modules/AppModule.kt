@@ -2,6 +2,7 @@ package com.ashehata.dru.di.modules
 
 import android.content.Context
 import androidx.room.Room
+import com.ashehata.dru.BuildConfig.BASE_URL
 import com.ashehata.dru.database.room.AppDatabase
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
