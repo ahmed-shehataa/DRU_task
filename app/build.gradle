@@ -93,6 +93,7 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     kapt "com.google.dagger:hilt-compiler:$dagger_version"
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
+    implementation("androidx.hilt:hilt-work:1.0.0")
     //endregion
 
     //region room
@@ -100,5 +101,8 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     //endregion
+
+    implementation("androidx.work:work-runtime-ktx:$work_version")
+
 
 }
