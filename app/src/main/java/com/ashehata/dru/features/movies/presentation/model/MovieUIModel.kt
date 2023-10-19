@@ -1,5 +1,7 @@
 package com.ashehata.dru.features.movies.presentation.model
 
+import com.ashehata.dru.BuildConfig
+
 data class MovieUIModel(
     val adult: Boolean?,
     val backdropPath: String?,
@@ -14,5 +16,7 @@ data class MovieUIModel(
     val title: String?,
     val video: Boolean?,
     val voteAverage: Double?,
-    val voteCount: Int?
+    val voteCount: Int?,
+    val posterUrl: String = BuildConfig.BASE_IMAGE_URL + "w500/" + posterPath,
+    val voteRate: VoteRate = VoteRate.getRate(voteAverage ?: 0.0)
 )

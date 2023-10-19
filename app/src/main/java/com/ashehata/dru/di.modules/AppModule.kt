@@ -2,7 +2,7 @@ package com.ashehata.dru.di.modules
 
 import android.content.Context
 import androidx.room.Room
-import com.ashehata.dru.BuildConfig.BASE_URL
+import com.ashehata.dru.BuildConfig.BASE_API_URL
 import com.ashehata.dru.database.room.AppDatabase
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -55,7 +55,7 @@ class AppModule {
         moshi: Moshi
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_API_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(httpClient)
             .build()

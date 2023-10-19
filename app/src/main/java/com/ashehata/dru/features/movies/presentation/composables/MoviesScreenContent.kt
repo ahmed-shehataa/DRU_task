@@ -37,15 +37,11 @@ fun MoviesScreenContent(
     onTryAgain: () -> Unit,
 ) {
 
-    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
     Scaffold(
-        modifier = Modifier
-            .fillMaxSize()
-            .nestedScroll(scrollBehavior.nestedScrollConnection),
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             CenterAlignedTopAppBar(
-                scrollBehavior = scrollBehavior,
                 title = {
                     Text(
                         text = stringResource(id = R.string.movies_title),
@@ -62,8 +58,6 @@ fun MoviesScreenContent(
                 .padding(
                     top = scaffold.calculateTopPadding(),
                     bottom = scaffold.calculateBottomPadding(),
-                    start = 16.dp,
-                    end = 16.dp
                 )
                 .pullRefresh(isRefreshState)
 
