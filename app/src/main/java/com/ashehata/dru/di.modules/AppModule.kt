@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.ashehata.dru.BuildConfig.BASE_API_URL
 import com.ashehata.dru.database.room.AppDatabase
+import com.ashehata.dru.features.movies.data.local.dao.MoviesDao
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -69,5 +70,9 @@ class AppModule {
             "dru_db"
         ).build()
     }
+
+    @Singleton
+    @Provides
+    fun provideMoviesDao(appDatabase: AppDatabase): MoviesDao = appDatabase.moviesDao()
 
 }

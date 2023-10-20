@@ -7,7 +7,7 @@ import com.ashehata.dru.features.movies.data.model.MovieDataModel
 interface MoviesDao {
 
     @Query("SELECT * FROM movies")
-    fun getMovies(): List<MovieDataModel>
+    suspend fun getMovies(): List<MovieDataModel>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(drugs: List<MovieDataModel>)

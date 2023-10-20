@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Dru"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".features.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.Dru">
             <intent-filter>
@@ -25,6 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- IMPORTANT: This disables the default Worker initializer -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
     </application>
 
 </manifest>

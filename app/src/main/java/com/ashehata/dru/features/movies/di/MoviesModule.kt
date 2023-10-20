@@ -1,7 +1,5 @@
-package com.ashehata.orange_task.modules.Movies.di
+package com.ashehata.dru.features.movies.di
 
-import com.ashehata.dru.database.room.AppDatabase
-import com.ashehata.dru.features.movies.data.local.dao.MoviesDao
 import com.ashehata.dru.features.movies.data.local.source.MoviesLocalDataSource
 import com.ashehata.dru.features.movies.data.local.source.MoviesLocalDataSourceImpl
 import com.ashehata.dru.features.movies.data.remote.MoviesRemoteDataSource
@@ -40,11 +38,6 @@ abstract class MoviesModule {
         @Provides
         fun provideMoviesService(retrofit: Retrofit): MoviesService =
             retrofit.create(MoviesService::class.java)
-
-
-        @ViewModelScoped
-        @Provides
-        fun provideMoviesDao(appDatabase: AppDatabase): MoviesDao = appDatabase.moviesDao()
 
     }
 }

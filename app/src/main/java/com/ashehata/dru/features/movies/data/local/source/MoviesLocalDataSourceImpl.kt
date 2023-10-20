@@ -7,7 +7,7 @@ import javax.inject.Inject
 class MoviesLocalDataSourceImpl @Inject constructor(
     private val dao: MoviesDao
 ) : MoviesLocalDataSource {
-    override fun getMovies(): List<MovieDataModel> {
+    override suspend fun getMovies(): List<MovieDataModel> {
         return dao.getMovies()
     }
 

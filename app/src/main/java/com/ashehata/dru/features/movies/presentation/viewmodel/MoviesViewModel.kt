@@ -17,9 +17,10 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
 @HiltViewModel
 class MoviesViewModel @Inject constructor(
-    private val getMoviesListUseCase: GetMoviesListUseCase
+    private val getMoviesListUseCase: GetMoviesListUseCase,
 ) : ViewModel() {
 
     private val _uiState: MutableStateFlow<MoviesUiState> = MutableStateFlow(MoviesUiState())

@@ -1,4 +1,4 @@
-package com.ashehata.dru
+package com.ashehata.dru.features.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
