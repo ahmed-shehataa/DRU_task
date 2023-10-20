@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.ashehata.dru.common.presentation.compose.VoteBadge
 import com.ashehata.dru.features.movies.presentation.model.MovieUIModel
 import com.ashehata.dru.features.movies.presentation.model.VoteRate
 
@@ -86,38 +87,6 @@ fun MoviesItem(
                 .padding(top = 12.dp, end = 12.dp), movie
         )
 
-    }
-
-}
-
-@Composable
-fun VoteBadge(
-    modifier: Modifier,
-    movie: MovieUIModel
-) {
-
-    val color = remember {
-        when (movie.voteRate) {
-            VoteRate.HIGH -> Color.Red
-            VoteRate.MEDIUM -> Color.Blue
-            VoteRate.LOW -> Color.Green
-            VoteRate.UNKNOWN -> Color.Gray
-        }
-    }
-
-    Box(
-        modifier = modifier
-            .clip(CircleShape)
-            .background(color)
-            .padding(8.dp), contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = (movie.voteAverage ?: 0).toString(),
-            fontSize = 18.sp,
-            color = Color.White,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis
-        )
     }
 
 }

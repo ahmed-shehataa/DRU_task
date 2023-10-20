@@ -1,6 +1,5 @@
 package com.ashehata.dru.features.movieDetails.presentation.compoasbales
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +17,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.ashehata.dru.R
+import com.ashehata.dru.common.presentation.compose.VoteBadge
 import com.ashehata.dru.features.movies.presentation.model.MovieUIModel
 
 
@@ -27,7 +27,6 @@ fun MovieDetailsScreenContent(
     onBackClicked: () -> Unit
 ) {
 
-    Log.i("MovieDetailsScreenContent: ", movie.toString())
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -85,7 +84,15 @@ fun MovieDetailsScreenContent(
             Modifier
                 .align(Alignment.TopStart)
                 .statusBarsPadding()
-                .padding(start = 12.dp ,top = 12.dp)
+                .padding(start = 12.dp, top = 12.dp)
+
+        )
+
+        VoteBadge(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .statusBarsPadding()
+                .padding(end = 12.dp, top = 12.dp), movie = movie
 
         )
     }
