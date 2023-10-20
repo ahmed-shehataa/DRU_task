@@ -85,7 +85,7 @@ fun MovieDetailsScreenContent(
             Modifier
                 .align(Alignment.TopStart)
                 .statusBarsPadding()
-                .padding(start = 12.dp)
+                .padding(start = 12.dp ,top = 12.dp)
 
         )
     }
