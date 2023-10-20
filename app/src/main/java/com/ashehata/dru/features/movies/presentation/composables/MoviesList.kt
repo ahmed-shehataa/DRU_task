@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
@@ -40,8 +42,13 @@ fun MoviesList(moviesList: List<MovieUIModel>, onMovieClicked: (MovieUIModel) ->
     }
 
 
-    Box {
+    Box(
+        Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
         HorizontalPager(
+            modifier = Modifier.align(Alignment.Center),
             state = pagerState, contentPadding = PaddingValues(all = 16.dp), pageSpacing = 12.dp
         ) {
             MoviesItem(
