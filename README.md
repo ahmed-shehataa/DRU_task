@@ -1,5 +1,5 @@
 # Dru_task
-Create an application and connect it with the mentioned Api.
+Create an application and connect it with the mentioned API.
 
 ## ScreenShots:
 <p align="center">
@@ -16,7 +16,7 @@ Create an application and connect it with the mentioned Api.
 
 
 ## APK Download
-[Click here](https://drive.google.com/file/d/1hH8VLKvclu9qMgSkXoNI3Q3oi1u9RIdf/view?usp=sharing)
+[Click here](https://drive.google.com/file/d/1dhTtxG9t49mCsQ6jsAVy0PTwVUZf92n0/view?usp=sharing)
 
 ## In-App architecture
 <p>
@@ -37,6 +37,7 @@ Create an application and connect it with the mentioned Api.
 - MVVM arch pattern (reactive MVI)
 - Coroutines & flows
 - Retrofit
+- Work-manager
 - Room
 - Coil
 - Proguard
