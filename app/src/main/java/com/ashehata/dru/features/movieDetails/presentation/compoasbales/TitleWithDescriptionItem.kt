@@ -1,15 +1,18 @@
-package com.ashehata.dru.features.movies.presentation.composables
+package com.ashehata.dru.features.movieDetails.presentation.compoasbales
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -20,12 +23,24 @@ fun TitleWithDescriptionItem(
 ) {
 
     Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                start = 16.dp,
+                end = 16.dp
+            ),
+        verticalAlignment = Alignment.Top,
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
 
-        Text(text = stringResource(id = titleRes), fontSize = 18.sp, color = Color.Black)
+        Text(
+            text = stringResource(id = titleRes),
+            fontSize = 18.sp,
+            color = Color.Black,
+            style = TextStyle(
+                fontWeight = FontWeight.Bold
+            )
+        )
         Text(text = description, fontSize = 16.sp, color = Color.Black)
     }
 

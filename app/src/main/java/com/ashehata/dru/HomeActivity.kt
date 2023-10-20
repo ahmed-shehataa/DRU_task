@@ -7,8 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.ashehata.dru.features.movieDetails.presentation.compoasbales.MovieDetailsScreen
 import com.ashehata.dru.features.movies.presentation.composables.MoviesScreen
+import com.ashehata.dru.features.movies.presentation.model.MovieUIModel
 import com.ashehata.dru.theme.AppTheme
+import com.ashehata.dru.util.parcelable
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,11 +25,14 @@ class HomeActivity : ComponentActivity() {
             AppTheme {
                 NavHost(navController = navController, startDestination = "movies") {
                     composable("movies") {
-                        MoviesScreen()
+                        MoviesScreen(navController = navController)
                     }
 
                     composable("movie_details") {
-
+                        val movie = it.arguments?.parcelable<MovieUIModel>("movie")
+                        movie?.let {
+                            MovieDetailsScreen(movie = movie, navController = navController)
+                        }
                     }
                 }
             }

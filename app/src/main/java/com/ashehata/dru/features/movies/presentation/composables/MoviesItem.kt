@@ -28,7 +28,12 @@ import com.ashehata.dru.features.movies.presentation.model.MovieUIModel
 import com.ashehata.dru.features.movies.presentation.model.VoteRate
 
 @Composable
-fun MoviesItem(modifier: Modifier, movie: MovieUIModel, isSelected: Boolean) {
+fun MoviesItem(
+    modifier: Modifier,
+    movie: MovieUIModel,
+    isSelected: Boolean,
+    onMovieClicked: (MovieUIModel) -> Unit
+) {
 
     val scaleAnimated = animateFloatAsState(targetValue = if (isSelected) 1f else .9f)
 
@@ -37,7 +42,7 @@ fun MoviesItem(modifier: Modifier, movie: MovieUIModel, isSelected: Boolean) {
             .scale(scaleAnimated.value)
             .clip(MaterialTheme.shapes.large)
             .clickable {
-
+                onMovieClicked(movie)
             }
             .background(Color.LightGray),
     ) {

@@ -1,7 +1,10 @@
 package com.ashehata.dru.features.movies.presentation.model
 
+import android.os.Parcelable
 import com.ashehata.dru.BuildConfig
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class MovieUIModel(
     val adult: Boolean?,
     val backdropPath: String?,
@@ -18,5 +21,6 @@ data class MovieUIModel(
     val voteAverage: Double?,
     val voteCount: Int?,
     val posterUrl: String = BuildConfig.BASE_IMAGE_URL + "w500/" + posterPath,
+    val backdropUrl: String = BuildConfig.BASE_IMAGE_URL + "w500/" + backdropPath,
     val voteRate: VoteRate = VoteRate.getRate(voteAverage ?: 0.0)
-)
+) : Parcelable

@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MoviesList(moviesList: List<MovieUIModel>) {
+fun MoviesList(moviesList: List<MovieUIModel>, onMovieClicked: (MovieUIModel) -> Unit) {
 
     val scope = rememberCoroutineScope()
     val pagerState = rememberPagerState(
@@ -47,7 +47,8 @@ fun MoviesList(moviesList: List<MovieUIModel>) {
             MoviesItem(
                 modifier = Modifier.fillMaxSize(),
                 movie = moviesList[it],
-                isSelected = it == pagerState.currentPage
+                isSelected = it == pagerState.currentPage,
+                onMovieClicked = onMovieClicked
             )
         }
 
