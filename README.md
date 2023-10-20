@@ -23,6 +23,10 @@ Create an application and connect it with the mentioned API.
   <img src="img/arch.png" height="180" width="900">
 </p>
 
+## Note
+The cached data deleted    
+- In debug after 15 MIN (for testing purposes)
+- In release after 4 HOURS 
 
 ## Features
 - Caching
