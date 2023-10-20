@@ -30,7 +30,7 @@ class MoviesViewModel @Inject constructor(
 
     private val moviesHandlerException =
         CoroutineExceptionHandler { coroutineContext, throwable ->
-            Log.i("moviesHandlerException: ", "done")
+            throwable.localizedMessage?.let { Log.i("moviesHandlerException: ", it) }
             _uiState.value.isLoading.value = false
             _uiState.value.networkError.value = throwable.toNetworkError()
         }
